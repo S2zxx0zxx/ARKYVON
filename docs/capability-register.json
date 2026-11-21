@@ -1,0 +1,3929 @@
+{
+  "schemaVersion": 1,
+  "source": "SGE_NEXT_391_FEATURE_OSS_IMPLEMENTATION_PLAN_v4.md",
+  "note": "Design requirements, not fully delivered features. Local implementation requires external reproducibility and device verification before release.",
+  "capabilities": [
+    {
+      "id": "CAP-01-001",
+      "name": "Game product brief",
+      "strategy": "Compose",
+      "implementation": "Create a typed game-brief YAML/MD template with tracked approval and alternatives.",
+      "wave": "A",
+      "acceptance": "Document/schema lint + explicit reviewer sign-off; trace to G00–G02.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-01-002",
+      "name": "audience and genre profile",
+      "strategy": "Compose",
+      "implementation": "Capture personas, genre references and skill levels in project metadata; keep research links.",
+      "wave": "A",
+      "acceptance": "Document/schema lint + explicit reviewer sign-off; trace to G00–G02.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-01-003",
+      "name": "target devices and input modes",
+      "strategy": "Compose",
+      "implementation": "Generate device/input matrix from project manifest; include accessible alternatives.",
+      "wave": "A",
+      "acceptance": "Document/schema lint + explicit reviewer sign-off; trace to G00–G02.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-01-004",
+      "name": "platform and minimum hardware policy",
+      "strategy": "Build",
+      "implementation": "Define supported hardware floor and platform budget contract with recorded exceptions.",
+      "wave": "A",
+      "acceptance": "Document/schema lint + explicit reviewer sign-off; trace to G00–G02.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-01-005",
+      "name": "game loop hypothesis",
+      "strategy": "Build",
+      "implementation": "Specify measurable player input→simulation→feedback→reward loop and cancellation conditions.",
+      "wave": "A",
+      "acceptance": "Document/schema lint + explicit reviewer sign-off; trace to G00–G02.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-01-006",
+      "name": "core mechanic specification",
+      "strategy": "Build",
+      "implementation": "Write versioned game-rules RFC with state diagrams, example inputs and game-specific oracles.",
+      "wave": "A",
+      "acceptance": "Document/schema lint + explicit reviewer sign-off; trace to G00–G02.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-01-007",
+      "name": "fun-factor playtest protocol",
+      "strategy": "Compose",
+      "implementation": "Create repeatable playtest protocol, questions, recordings and result rubric; require human testers.",
+      "wave": "A",
+      "acceptance": "Document/schema lint + explicit reviewer sign-off; trace to G00–G02.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-01-008",
+      "name": "PRD and TRD templates",
+      "strategy": "Compose",
+      "implementation": "Use Markdown/JSON Schema templates with validation and version-controlled approvals.",
+      "wave": "A",
+      "acceptance": "Document/schema lint + explicit reviewer sign-off; trace to G00–G02.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-01-009",
+      "name": "architecture decision records",
+      "strategy": "Build",
+      "implementation": "Maintain ADR index with rejected choices, migration plan and performance rationale.",
+      "wave": "A",
+      "acceptance": "Document/schema lint + explicit reviewer sign-off; trace to G00–G02.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-01-010",
+      "name": "dependency and risk register",
+      "strategy": "Compose",
+      "implementation": "Create dependency risk register from SBOM, open issues and explicit owner/action fields.",
+      "wave": "A",
+      "acceptance": "Document/schema lint + explicit reviewer sign-off; trace to G00–G02.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-01-011",
+      "name": "feature scope and non-goals",
+      "strategy": "Build",
+      "implementation": "Implement scope-baseline and non-goal registry; every change gets a diff review.",
+      "wave": "A",
+      "acceptance": "Document/schema lint + explicit reviewer sign-off; trace to G00–G02.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-01-012",
+      "name": "per-game acceptance contracts",
+      "strategy": "Compose",
+      "implementation": "Turn game goals into executable test IDs with device, metric and quality thresholds.",
+      "wave": "A",
+      "acceptance": "Document/schema lint + explicit reviewer sign-off; trace to G00–G02.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-01-013",
+      "name": "game lifecycle and ownership map",
+      "strategy": "Build",
+      "implementation": "Define roles and production gate owners even for a single-developer studio.",
+      "wave": "A",
+      "acceptance": "Document/schema lint + explicit reviewer sign-off; trace to G00–G02.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-01-014",
+      "name": "budget and operating-cost ceilings",
+      "strategy": "Compose",
+      "implementation": "Specify per-game byte, RAM, GPU, API and optional hosting budgets; enforce via reports.",
+      "wave": "A",
+      "acceptance": "Document/schema lint + explicit reviewer sign-off; trace to G00–G02.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-01-015",
+      "name": "release-readiness checklist",
+      "strategy": "Compose",
+      "implementation": "Generate preflight release checklist from manifest + QA/asset/license checks.",
+      "wave": "A",
+      "acceptance": "Document/schema lint + explicit reviewer sign-off; trace to G00–G02.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-01-016",
+      "name": "open-gap and assumption register",
+      "strategy": "Build",
+      "implementation": "Track unknowns and newly discovered gaps as versioned backlog records, never silently discard.",
+      "wave": "A",
+      "acceptance": "Document/schema lint + explicit reviewer sign-off; trace to G00–G02.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-02-001",
+      "name": "Main loop and fixed-step simulation",
+      "strategy": "Build",
+      "implementation": "Implement accumulator-based fixed-step update loop, capped catch-up and pause policy.",
+      "wave": "B",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "IMPLEMENTED_LOCAL",
+      "evidence": [
+        "src/core/fixed-step-loop.ts",
+        "tests/kernel.test.mjs"
+      ]
+    },
+    {
+      "id": "CAP-02-002",
+      "name": "render interpolation",
+      "strategy": "Adapt",
+      "implementation": "Draw through a renderer-independent interpolation API using previous/current state snapshots.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-02-003",
+      "name": "scheduler and cancellation",
+      "strategy": "Build",
+      "implementation": "Build clock-aware cancellable task scheduler with AbortSignal and disposed-scene cleanup.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-02-004",
+      "name": "scene lifecycle and transitions",
+      "strategy": "Build",
+      "implementation": "Define enter/exit/suspend/resume lifecycle with ownership and async cancellation.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PARTIAL_LOCAL",
+      "evidence": [
+        "tests/kernel.test.mjs"
+      ]
+    },
+    {
+      "id": "CAP-02-005",
+      "name": "deterministic random seed interface",
+      "strategy": "Build",
+      "implementation": "Inject seeded PRNG interface into game rules; ban uncontrolled random calls in simulation.",
+      "wave": "B",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "IMPLEMENTED_LOCAL",
+      "evidence": [
+        "src/core/seeded-random.ts",
+        "tests/kernel.test.mjs"
+      ]
+    },
+    {
+      "id": "CAP-02-006",
+      "name": "simulation time versus wall time",
+      "strategy": "Build",
+      "implementation": "Separate monotonic simulation tick clock from wall clock and server clock.",
+      "wave": "B",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-02-007",
+      "name": "foreground/background/visibility lifecycle",
+      "strategy": "Compose",
+      "implementation": "Connect Page Visibility and Capacitor lifecycle to save, resume, audio and render throttling.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-02-008",
+      "name": "finite state machines",
+      "strategy": "Adapt",
+      "implementation": "Use a small state-machine library or typed FSM adapter with transition guards.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-02-009",
+      "name": "ECS or composition framework",
+      "strategy": "Adapt",
+      "implementation": "Benchmark bitECS against simple composition; ship one selected abstraction, not two overlapping ECSs.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-02-010",
+      "name": "entity identifiers and lifecycle",
+      "strategy": "Build",
+      "implementation": "Implement stable entity IDs/generation counters and explicit spawn/dispose semantics.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-02-011",
+      "name": "component serialization",
+      "strategy": "Compose",
+      "implementation": "Use versioned component schemas and compact serialization with migration fixtures.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-02-012",
+      "name": "event bus and commands",
+      "strategy": "Build",
+      "implementation": "Create typed event/command interfaces, subscriptions scoped to scene and idempotent handlers.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PARTIAL_LOCAL",
+      "evidence": [
+        "tests/kernel.test.mjs"
+      ]
+    },
+    {
+      "id": "CAP-02-013",
+      "name": "dependency injection and service registry",
+      "strategy": "Build",
+      "implementation": "Build small injected service registry with cycle detection and explicit lifetime scopes.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PARTIAL_LOCAL",
+      "evidence": [
+        "tests/kernel.test.mjs"
+      ]
+    },
+    {
+      "id": "CAP-02-014",
+      "name": "object pooling and memory budgets",
+      "strategy": "Adapt",
+      "implementation": "Provide pooled objects and per-system allocation counters; use only where benchmarks justify.",
+      "wave": "B",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-02-015",
+      "name": "worker messaging where supported",
+      "strategy": "Compose",
+      "implementation": "Use Worker messages with schema validation, transferables and main-thread fallback.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-02-016",
+      "name": "fault containment",
+      "strategy": "Build",
+      "implementation": "Contain recoverable scene/plugin faults behind error boundaries; preserve diagnostic context.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-02-017",
+      "name": "feature and capability detection",
+      "strategy": "Adapt",
+      "implementation": "Normalize navigator/GPU/OS capability probes into testable feature profiles.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-02-018",
+      "name": "restart and crash recovery",
+      "strategy": "Compose",
+      "implementation": "Restore last validated save/checkpoint on restart, detect crash loops and offer safe mode.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-02-019",
+      "name": "structured error codes",
+      "strategy": "Build",
+      "implementation": "Publish stable structured error taxonomy with actionable diagnostics and sensitive-data redaction.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-03-001",
+      "name": "2D scene graph",
+      "strategy": "Adapt",
+      "implementation": "Wrap PixiJS containers/sprites in IScene2D while isolating Pixi-specific objects.",
+      "wave": "C",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-03-002",
+      "name": "2D sprite atlas and batching",
+      "strategy": "Reuse",
+      "implementation": "Use PixiJS texture atlas/batching, texture-manifest importer and draw-call budget tests.",
+      "wave": "C",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-03-003",
+      "name": "2D lighting and masking",
+      "strategy": "Adapt",
+      "implementation": "Expose Pixi filters/masks and optional light plugin behind capability-aware quality presets.",
+      "wave": "C",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-03-004",
+      "name": "text and bitmap font renderers",
+      "strategy": "Adapt",
+      "implementation": "Integrate Pixi Text/bitmap fonts with font fallback and locale coverage tests.",
+      "wave": "C",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-03-005",
+      "name": "3D camera and projection",
+      "strategy": "Adapt",
+      "implementation": "Map Babylon camera classes onto ICamera3D with predictable coordinates and controls.",
+      "wave": "C",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-03-006",
+      "name": "mesh and material pipeline",
+      "strategy": "Adapt",
+      "implementation": "Use Babylon mesh/material APIs; import validated glTF/GLB through asset IDs.",
+      "wave": "C",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-03-007",
+      "name": "physically based materials where suitable",
+      "strategy": "Reuse",
+      "implementation": "Use Babylon PBR materials and environment maps, disabled on unsupported low tier.",
+      "wave": "C",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-03-008",
+      "name": "skeletal animation rendering",
+      "strategy": "Reuse",
+      "implementation": "Use Babylon skeletal rendering through animation tracks from glTF assets.",
+      "wave": "C",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-03-009",
+      "name": "shadows and reflection tiers",
+      "strategy": "Adapt",
+      "implementation": "Configure Babylon shadow/reflection presets per hardware profile and measure GPU cost.",
+      "wave": "C",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-03-010",
+      "name": "scene culling and occlusion",
+      "strategy": "Reuse",
+      "implementation": "Use Babylon frustum/occlusion tools; instrument false-visibility and culling costs.",
+      "wave": "C",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-03-011",
+      "name": "level of detail and impostors",
+      "strategy": "Adapt",
+      "implementation": "Build asset-LOD selectors on top of Babylon mesh optimization/instance support.",
+      "wave": "C",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-03-012",
+      "name": "particles and instancing",
+      "strategy": "Adapt",
+      "implementation": "Use Pixi/Babylon particles and GPU instancing with pooled emitters and lifetime caps.",
+      "wave": "C",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-03-013",
+      "name": "post-processing and color grading",
+      "strategy": "Adapt",
+      "implementation": "Expose Babylon render effects through an optional quality-tier post-processing graph.",
+      "wave": "C",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-03-014",
+      "name": "shader library and compilation cache",
+      "strategy": "Compose",
+      "implementation": "Maintain reviewed shader variants with build-time lint/compilation, cached keys and fallback.",
+      "wave": "C",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-03-015",
+      "name": "GPU context lost/recovery",
+      "strategy": "Build",
+      "implementation": "Handle WebGL lost/restored events; reload GPU resources from immutable CPU-side asset IDs.",
+      "wave": "C",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-03-016",
+      "name": "renderer backend abstraction",
+      "strategy": "Build",
+      "implementation": "Define IRenderer/IRenderScene interfaces and enforce backend conformance tests.",
+      "wave": "C",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-03-017",
+      "name": "fallback graphics capabilities",
+      "strategy": "Build",
+      "implementation": "Select WebGL2 default or WebGPU when verified, with graceful feature fallback.",
+      "wave": "C",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-03-018",
+      "name": "dynamic resolution",
+      "strategy": "Adapt",
+      "implementation": "Adapt render target scale and LOD from smoothed frame-time, with hysteresis.",
+      "wave": "C",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-03-019",
+      "name": "screenshot and golden image capture",
+      "strategy": "Compose",
+      "implementation": "Capture consistent screenshots via Playwright plus renderer-side deterministic capture hooks.",
+      "wave": "C",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-03-020",
+      "name": "render debug overlays",
+      "strategy": "Build",
+      "implementation": "Build toggleable overlays for draw calls, textures, meshes, GPU/CPU frame timings.",
+      "wave": "C",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-04-001",
+      "name": "2D and 3D physics adapters",
+      "strategy": "Adapt",
+      "implementation": "Define IPhysicsWorld adapters for Rapier 2D and Babylon Havok 3D; instantiate per game.",
+      "wave": "C",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-04-002",
+      "name": "rigid body and collision layers",
+      "strategy": "Adapt",
+      "implementation": "Map colliders, layers and material properties into backend-neutral entity components.",
+      "wave": "C",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-04-003",
+      "name": "trigger volumes and sensor events",
+      "strategy": "Adapt",
+      "implementation": "Bridge physics trigger start/stop events to typed game events without duplicate delivery.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-04-004",
+      "name": "shape queries and raycasts",
+      "strategy": "Adapt",
+      "implementation": "Expose raycast/shape-cast query contracts with deterministic filtering and result order.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-04-005",
+      "name": "continuous collision detection",
+      "strategy": "Reuse",
+      "implementation": "Enable CCD only on fast objects and compare tunneling vs solver cost in fixtures.",
+      "wave": "C",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-04-006",
+      "name": "joints and constraints",
+      "strategy": "Adapt",
+      "implementation": "Represent joints/constraints as serializable definitions mapped to backend objects.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-04-007",
+      "name": "character controller",
+      "strategy": "Compose",
+      "implementation": "Integrate engine character controller with game movement states and slope/step contracts.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-04-008",
+      "name": "vehicle dynamics plugin",
+      "strategy": "Build",
+      "implementation": "Build specialized vehicle dynamics plugin only after arcade-vs-sim handling design is locked.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-04-009",
+      "name": "rope and cloth optional plugins",
+      "strategy": "Compose",
+      "implementation": "Keep cloth/rope experimental; evaluate supported external solvers, never force into base build.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-04-010",
+      "name": "fixed timestep policy",
+      "strategy": "Build",
+      "implementation": "Advance physics from fixed-step scheduler and reject mismatched simulation delta.",
+      "wave": "C",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-04-011",
+      "name": "broadphase and collision profiling",
+      "strategy": "Compose",
+      "implementation": "Export collider counts, broadphase timing and costly contacts into profiling panel.",
+      "wave": "C",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-04-012",
+      "name": "physics debugging",
+      "strategy": "Adapt",
+      "implementation": "Expose debug wireframes/contacts in studio using physics backend debug data.",
+      "wave": "C",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-04-013",
+      "name": "state snapshots",
+      "strategy": "Build",
+      "implementation": "Define physics snapshot format and restore constraints; flag non-reproducible state.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-04-014",
+      "name": "collision filtering rules",
+      "strategy": "Adapt",
+      "implementation": "Implement declarative category masks, collision matrices and no-contact rules.",
+      "wave": "C",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-04-015",
+      "name": "simulation replay",
+      "strategy": "Compose",
+      "implementation": "Record commands and state hashes, compare representative physics replays per backend.",
+      "wave": "C",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-04-016",
+      "name": "numerical stability tests",
+      "strategy": "Compose",
+      "implementation": "Run fuzz and extreme-value cases against timestep, scale, mass and contact stability.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-04-017",
+      "name": "client/server physics compatibility constraints",
+      "strategy": "Build",
+      "implementation": "Document and test that client prediction cannot be assumed server-deterministic across runtimes.",
+      "wave": "C",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-05-001",
+      "name": "Touch, gesture and multitouch",
+      "strategy": "Adapt",
+      "implementation": "Normalize pointer/touch events through browser Pointer Events and gesture recognizers.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-05-002",
+      "name": "mouse and keyboard",
+      "strategy": "Adapt",
+      "implementation": "Map keyboard/mouse to semantic game actions, not hardcoded physical keys.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-05-003",
+      "name": "gamepad mappings and hotplug",
+      "strategy": "Adapt",
+      "implementation": "Use Gamepad API polling and device hotplug handling with local profiles.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-05-004",
+      "name": "virtual joystick",
+      "strategy": "Build",
+      "implementation": "Implement customizable virtual stick with dead zone, capture and multi-touch priority.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-05-005",
+      "name": "action remapping and binding profiles",
+      "strategy": "Build",
+      "implementation": "Store per-game action bindings with conflict detection, defaults and import/export.",
+      "wave": "B",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-05-006",
+      "name": "sensitivity and dead zones",
+      "strategy": "Build",
+      "implementation": "Provide calibrated dead-zone, sensitivity and acceleration curves by input modality.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-05-007",
+      "name": "hold/repeat/debounce semantics",
+      "strategy": "Build",
+      "implementation": "Define tap/hold/repeat/debounce semantics in simulation ticks and UI time separately.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-05-008",
+      "name": "portrait and landscape input mapping",
+      "strategy": "Compose",
+      "implementation": "Transform device touch coordinates through viewport, letterbox and rotation matrix.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-05-009",
+      "name": "keyboard focus navigation",
+      "strategy": "Adapt",
+      "implementation": "Route accessibility focus and key navigation through game UI/action mapping.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-05-010",
+      "name": "screen safe areas",
+      "strategy": "Compose",
+      "implementation": "Use CSS env(safe-area-inset-*) plus Capacitor insets where supported.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-05-011",
+      "name": "mobile haptics",
+      "strategy": "Adapt",
+      "implementation": "Expose optional Android haptic service with browser vibration fallback and disable setting.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-05-012",
+      "name": "low-latency input sampling",
+      "strategy": "Build",
+      "implementation": "Timestamp and queue raw actions before fixed-step simulation; measure event-to-response latency.",
+      "wave": "B",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-05-013",
+      "name": "input recording and replay",
+      "strategy": "Build",
+      "implementation": "Serialize action frames with mapping version for deterministic replay and bug reports.",
+      "wave": "B",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-05-014",
+      "name": "accessibility input alternatives",
+      "strategy": "Compose",
+      "implementation": "Add switch/keyboard/touch alternative bindings to input accessibility settings.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-05-015",
+      "name": "device-specific controls compatibility",
+      "strategy": "Compose",
+      "implementation": "Run test cases on real Android devices, Bluetooth gamepads and mobile browsers.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-06-001",
+      "name": "Audio buses and per-channel volume",
+      "strategy": "Adapt",
+      "implementation": "Use howler.js/Web Audio buses and save separate SFX/music/voice gain settings.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-06-002",
+      "name": "one-shot and looping effects",
+      "strategy": "Reuse",
+      "implementation": "Use howler.js playback, pooling and loop controls for common sound effects.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-06-003",
+      "name": "2D/3D spatial sound",
+      "strategy": "Compose",
+      "implementation": "Use Web Audio panners or Babylon audio spatialization where suitable, with stereo fallback.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-06-004",
+      "name": "music crossfades",
+      "strategy": "Build",
+      "implementation": "Implement beat-independent music crossfade controller respecting app lifecycle.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-06-005",
+      "name": "ducking and prioritization",
+      "strategy": "Build",
+      "implementation": "Add priority/ducking policy so dialogue and UI cues remain audible under overload.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-06-006",
+      "name": "preload and streaming",
+      "strategy": "Adapt",
+      "implementation": "Preload short SFX with howler; stream long tracks and cap decoded audio memory.",
+      "wave": "C",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-06-007",
+      "name": "web autoplay recovery",
+      "strategy": "Compose",
+      "implementation": "Catch autoplay restrictions and unlock audio only after an allowed user gesture.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-06-008",
+      "name": "pause/resume and focus behavior",
+      "strategy": "Build",
+      "implementation": "Pause/resume audio on focus changes and lifecycle events, avoiding duplicate playbacks.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-06-009",
+      "name": "voice-over and dialogue synchronization",
+      "strategy": "Compose",
+      "implementation": "Sync voice cue timestamps to dialogue script and skip/seek state.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-06-010",
+      "name": "subtitles and captions",
+      "strategy": "Build",
+      "implementation": "Bind authored subtitle cues to audio timelines with locale-aware text formatting.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-06-011",
+      "name": "silence and reduced-sound modes",
+      "strategy": "Build",
+      "implementation": "Expose silence, mute, background-only and reduced-sound user preferences.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-06-012",
+      "name": "audio memory budgets",
+      "strategy": "Compose",
+      "implementation": "Budget decoded audio RAM by device tier and unload idle buffers.",
+      "wave": "C",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-06-013",
+      "name": "audio quality tiers",
+      "strategy": "Adapt",
+      "implementation": "Choose compression and sample-rate variants in asset cooker for device capabilities.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-06-014",
+      "name": "latency profiling",
+      "strategy": "Compose",
+      "implementation": "Measure request-to-audible latency and audio decode stalls on Android/Web.",
+      "wave": "C",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-06-015",
+      "name": "media codec validation",
+      "strategy": "Compose",
+      "implementation": "Validate browser/device codecs with test samples and define fallback formats.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-07-001",
+      "name": "Sprite-sheet animation",
+      "strategy": "Adapt",
+      "implementation": "Use Pixi sprite atlas frame animation with metadata-controlled timing and looping.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-07-002",
+      "name": "keyframe timelines",
+      "strategy": "Adapt",
+      "implementation": "Use keyframe timeline data mapped to Pixi/Babylon animation tracks.",
+      "wave": "D",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-07-003",
+      "name": "tweening and easing",
+      "strategy": "Adapt",
+      "implementation": "Use small tween library or native interpolation behind cancellable timeline handles.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-07-004",
+      "name": "skeletal animation",
+      "strategy": "Reuse",
+      "implementation": "Use Babylon skeletal animation and rigged glTF; keep a separate 2D bone adapter optional.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-07-005",
+      "name": "blend trees",
+      "strategy": "Build",
+      "implementation": "Provide reusable transition/blending graphs and per-entity animation parameters.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-07-006",
+      "name": "animation state graph",
+      "strategy": "Build",
+      "implementation": "Define typed animation states, transitions, interruptions and recovery guards.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-07-007",
+      "name": "layer masks",
+      "strategy": "Adapt",
+      "implementation": "Expose 3D bone masks through Babylon animation group/transform overrides where supported.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-07-008",
+      "name": "additive animations",
+      "strategy": "Compose",
+      "implementation": "Layer authored additive pose clips with declared skeletal compatibility checks.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-07-009",
+      "name": "procedural animation hooks",
+      "strategy": "Build",
+      "implementation": "Offer procedural animation hooks with deterministic inputs and performance budgets.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-07-010",
+      "name": "event markers and hit frames",
+      "strategy": "Build",
+      "implementation": "Emit authored attack/hit/audio event markers exactly once per simulation step.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-07-011",
+      "name": "inverse kinematics optional",
+      "strategy": "Compose",
+      "implementation": "Provide optional IK plugin based on available Babylon/Rapier tooling, benchmark first.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-07-012",
+      "name": "camera moves and shakes",
+      "strategy": "Adapt",
+      "implementation": "Generate camera shake and smooth camera tracks from reusable tween profiles.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-07-013",
+      "name": "cutscene and dialogue sequencer",
+      "strategy": "Build",
+      "implementation": "Compose cutscene timeline, game commands, dialogue and skip/restore checkpoints.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-07-014",
+      "name": "transitions and VFX timelines",
+      "strategy": "Compose",
+      "implementation": "Schedule VFX, sound and transition tracks off a synchronized timeline controller.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-07-015",
+      "name": "animation import and retargeting policy",
+      "strategy": "Compose",
+      "implementation": "Validate skeleton/clip mapping, naming and retarget compatibility before import.",
+      "wave": "D",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-07-016",
+      "name": "animation deterministic tests where relevant",
+      "strategy": "Compose",
+      "implementation": "Replay animation-critical events and compare timing across frame-rate variants.",
+      "wave": "D",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-07-017",
+      "name": "reduced-motion alternatives",
+      "strategy": "Build",
+      "implementation": "Provide reduced-motion substitution (static cues/fades) without hiding gameplay information.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-08-001",
+      "name": "Gameplay tags and attributes",
+      "strategy": "Build",
+      "implementation": "Define typed gameplay tags and stat schema, explicitly separated from ECS internals.",
+      "wave": "D",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-08-002",
+      "name": "character stats and health",
+      "strategy": "Build",
+      "implementation": "Compose HP/energy/stamina components and rule-tested heal/damage boundaries.",
+      "wave": "D",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-08-003",
+      "name": "abilities and cooldowns",
+      "strategy": "Build",
+      "implementation": "Build event-driven ability executor with cooldown ticks, cost validation and cancel rules.",
+      "wave": "D",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-08-004",
+      "name": "damage and status effects",
+      "strategy": "Build",
+      "implementation": "Implement authoritative damage pipeline, stacking rules and time-bounded status effects.",
+      "wave": "D",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-08-005",
+      "name": "inventory and equipment",
+      "strategy": "Build",
+      "implementation": "Define item IDs, inventory capacity, equip slots and migration-safe schemas.",
+      "wave": "D",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-08-006",
+      "name": "progression/XP and skill trees",
+      "strategy": "Build",
+      "implementation": "Create XP curves, unlock prerequisites and data-defined skill trees with cycle checks.",
+      "wave": "D",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-08-007",
+      "name": "achievements and challenges",
+      "strategy": "Build",
+      "implementation": "Define achievement predicates/events and offline persistence without rewarding replay duplicates.",
+      "wave": "D",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-08-008",
+      "name": "scoring and leaderboards interface",
+      "strategy": "Compose",
+      "implementation": "Expose local score calculator and optional server-backed leaderboard interface.",
+      "wave": "D",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-08-009",
+      "name": "quests and objectives",
+      "strategy": "Build",
+      "implementation": "Model quests as state machines with auditable trigger/complete/cancel transitions.",
+      "wave": "D",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-08-010",
+      "name": "level and checkpoint systems",
+      "strategy": "Compose",
+      "implementation": "Integrate checkpoint definitions into scene transitions and save transaction boundaries.",
+      "wave": "D",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-08-011",
+      "name": "tutorial/onboarding frameworks",
+      "strategy": "Compose",
+      "implementation": "Build reusable tutorial step actions, UI targets and completion persistence.",
+      "wave": "D",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-08-012",
+      "name": "rewards and unlocks",
+      "strategy": "Build",
+      "implementation": "Define verified reward events, claims ledger and idempotent unlock grants.",
+      "wave": "D",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-08-013",
+      "name": "economy abstractions and validation",
+      "strategy": "Build",
+      "implementation": "Use signed/authoritative economy decisions online; offline sandbox economy separately.",
+      "wave": "D",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-08-014",
+      "name": "world objects and interactions",
+      "strategy": "Build",
+      "implementation": "Expose interactable component, distance/action policy and timed interactions.",
+      "wave": "D",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-08-015",
+      "name": "gameplay event scripting",
+      "strategy": "Compose",
+      "implementation": "Compile validated visual scripting actions to allowlisted gameplay commands.",
+      "wave": "D",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-08-016",
+      "name": "balance data and tuning tables",
+      "strategy": "Build",
+      "implementation": "Store typed balancing tables with schema, ranges, changelog and A/B-safe versioning.",
+      "wave": "D",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-08-017",
+      "name": "difficulty curves and adaptive difficulty safeguards",
+      "strategy": "Build",
+      "implementation": "Implement explicit difficulty presets; adaptive logic requires fairness and opt-out review.",
+      "wave": "D",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-08-018",
+      "name": "procedural generation with seeds",
+      "strategy": "Adapt",
+      "implementation": "Provide seeded generation primitives, validators and saveable generation manifests.",
+      "wave": "D",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-08-019",
+      "name": "game-specific rule plugins",
+      "strategy": "Build",
+      "implementation": "Implement Board/Puzzle/Racing/Fighting rule plugins as independent game modules.",
+      "wave": "D",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-08-020",
+      "name": "narrative/dialogue graph",
+      "strategy": "Compose",
+      "implementation": "Compose narrative graph, branching variables and localization-friendly dialogue nodes.",
+      "wave": "D",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-09-001",
+      "name": "Finite state machines",
+      "strategy": "Adapt",
+      "implementation": "Reuse core FSM service with bot-specific transition rules and bounded action loops.",
+      "wave": "G",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-09-002",
+      "name": "behavior trees",
+      "strategy": "Build",
+      "implementation": "Implement typed behavior-tree nodes and deterministic tick budget per NPC.",
+      "wave": "G",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-09-003",
+      "name": "utility AI",
+      "strategy": "Build",
+      "implementation": "Implement weighted utility scoring functions with reproducible selection and tie-breaking.",
+      "wave": "G",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-09-004",
+      "name": "A* and navigation graph",
+      "strategy": "Adapt",
+      "implementation": "Use small A* path library or custom compact graph search, benchmark path count.",
+      "wave": "G",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-09-005",
+      "name": "grid pathfinding",
+      "strategy": "Adapt",
+      "implementation": "Import grid navigation from LDtk maps with blocked-cell and diagonal rules.",
+      "wave": "G",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-09-006",
+      "name": "3D navmesh adapter",
+      "strategy": "Adapt",
+      "implementation": "Integrate Babylon navigation/recast adapter only for 3D games that need it.",
+      "wave": "G",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-09-007",
+      "name": "obstacle avoidance",
+      "strategy": "Build",
+      "implementation": "Implement local avoidance steering with explicit crowd/performance limits.",
+      "wave": "G",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-09-008",
+      "name": "target selection and perception",
+      "strategy": "Build",
+      "implementation": "Model sensing/target choice as filtered queries with cooldown and fairness rules.",
+      "wave": "G",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-09-009",
+      "name": "scripted opponent bots",
+      "strategy": "Compose",
+      "implementation": "Use game-specific bots (e.g. chess search rules) behind IBotController, not one generic AI.",
+      "wave": "G",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-09-010",
+      "name": "difficulty preset and fairness controls",
+      "strategy": "Build",
+      "implementation": "Expose reaction/difficulty profiles without secretly increasing bot information access.",
+      "wave": "G",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-09-011",
+      "name": "bot simulation harness",
+      "strategy": "Compose",
+      "implementation": "Run thousands of headless seeded bot matches, deadlock detection and outcome distribution.",
+      "wave": "G",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-09-012",
+      "name": "offline-capable deterministic bots where required",
+      "strategy": "Build",
+      "implementation": "Require a seeded offline bot profile where replays/saves depend on reproducibility.",
+      "wave": "G",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-09-013",
+      "name": "diagnostic behavior viewer",
+      "strategy": "Compose",
+      "implementation": "Render behavior tree/FSM trace events in Studio without gameplay side effects.",
+      "wave": "G",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-09-014",
+      "name": "content-driven NPC parameters",
+      "strategy": "Build",
+      "implementation": "Move bot perception weights, ranges and priorities into validated content files.",
+      "wave": "G",
+      "acceptance": "Gameplay rule oracle + randomized boundary tests + headless game session.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-001",
+      "name": "Source asset registry and immutable IDs",
+      "strategy": "Build",
+      "implementation": "Assign asset UUID, source hash, dimensions and owner in versioned manifest registry.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-002",
+      "name": "provenance and redistribution license ledger",
+      "strategy": "Compose",
+      "implementation": "Store origin URLs, license text, author, allowed redistribution and review outcome per asset.",
+      "wave": "C",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-003",
+      "name": "import hooks and format validation",
+      "strategy": "Compose",
+      "implementation": "Use specialized importers with MIME/magic checks, size/decompression limits and sandboxed paths.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-004",
+      "name": "audio transcode",
+      "strategy": "Compose",
+      "implementation": "Invoke pinned FFmpeg executable out-of-process with build-specific license audit.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-005",
+      "name": "sprite sheets and atlas packing",
+      "strategy": "Adapt",
+      "implementation": "Use atlas packer and Pixi loader metadata to generate sprite sheets reproducibly.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-006",
+      "name": "KTX2/Basis and supported texture formats",
+      "strategy": "Compose",
+      "implementation": "Cook KTX2/Basis formats with Khronos KTX tools and device capability manifests.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-007",
+      "name": "glTF/GLB validation",
+      "strategy": "Compose",
+      "implementation": "Run glTF validator and glTF Transform before allowing imported 3D assets.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-008",
+      "name": "geometry simplification and mesh LODs",
+      "strategy": "Compose",
+      "implementation": "Use glTF Transform/meshoptimizer to generate measurable LOD and geometry budgets.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-009",
+      "name": "sprite and image resolution variants",
+      "strategy": "Compose",
+      "implementation": "Use Sharp/image tools for DPI tiers, alpha preservation and layout visual checks.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-010",
+      "name": "font subsetting and localization bundles",
+      "strategy": "Compose",
+      "implementation": "Subset fonts with license verification; include all localized glyph coverage test fixtures.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-011",
+      "name": "content-addressed cache",
+      "strategy": "Build",
+      "implementation": "Build SHA-256 content-addressed asset cache keyed by full transform toolchain version.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-012",
+      "name": "dependency graph and cycle detection",
+      "strategy": "Build",
+      "implementation": "Build DAG of asset inputs, recipes and outputs; reject cycles and missing dependencies.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-013",
+      "name": "per-platform cooking",
+      "strategy": "Build",
+      "implementation": "Generate target-specific asset variants with reproducible cooking options.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-014",
+      "name": "incremental rebuild based on file hashes",
+      "strategy": "Build",
+      "implementation": "Compare input, recipe and transitive dependency hashes before reprocessing assets.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-015",
+      "name": "asset deduplication",
+      "strategy": "Build",
+      "implementation": "Deduplicate identical output blobs across games without merging ownership metadata.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-016",
+      "name": "memory/download budget calculation",
+      "strategy": "Compose",
+      "implementation": "Estimate compressed download, decoded RAM and GPU VRAM from cooked asset metadata.",
+      "wave": "C",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-017",
+      "name": "lazy loading bundles",
+      "strategy": "Adapt",
+      "implementation": "Expose Pixi/Babylon lazy bundles through a common priority-aware streaming API.",
+      "wave": "C",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-018",
+      "name": "remote content manifest",
+      "strategy": "Build",
+      "implementation": "Create versioned optional remote-content manifest; offline base game must remain playable.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-019",
+      "name": "checksum and signature verification",
+      "strategy": "Build",
+      "implementation": "Verify content checksums and optional signed manifests before activating remote bundles.",
+      "wave": "C",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-020",
+      "name": "asset hot-reload in editor",
+      "strategy": "Compose",
+      "implementation": "Watch local asset changes, recook affected DAG nodes and refresh Studio scene safely.",
+      "wave": "C",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-021",
+      "name": "missing asset fallback",
+      "strategy": "Build",
+      "implementation": "Provide deliberate missing asset placeholders with structured error, never silent success.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-022",
+      "name": "archive and restore",
+      "strategy": "Build",
+      "implementation": "Archive original sources and recipes with restore-testable content hashes.",
+      "wave": "C",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-023",
+      "name": "content patch rollback",
+      "strategy": "Build",
+      "implementation": "Keep previous content manifest and provide atomic activation/rollback mechanism.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-024",
+      "name": "asset accessibility metadata",
+      "strategy": "Build",
+      "implementation": "Attach alt text, motion/flashing and audio-caption metadata to imported content.",
+      "wave": "C",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-10-025",
+      "name": "copyright review gate",
+      "strategy": "Compose",
+      "implementation": "Require recorded copyright/attribution/redistribution clearance before publication.",
+      "wave": "C",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-001",
+      "name": "Project dashboard and template wizard",
+      "strategy": "Compose",
+      "implementation": "Build React/Vite project home using validated game-template manifests and starter previews.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-002",
+      "name": "scene tree and hierarchy",
+      "strategy": "Adapt",
+      "implementation": "Use hierarchy tree component backed by scene node IDs; support selection and stable ordering.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-003",
+      "name": "scene canvas and viewport",
+      "strategy": "Compose",
+      "implementation": "Embed Pixi/Babylon preview viewport in Studio, independent from production runtime bundling.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-004",
+      "name": "inspector and property editing",
+      "strategy": "Compose",
+      "implementation": "Generate field editors from Zod/JSON Schema with validation and hot-apply commands.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-005",
+      "name": "drag/drop with undo-redo",
+      "strategy": "Build",
+      "implementation": "Implement transactional editor command stack with inverse operations and undo serialization.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-006",
+      "name": "prefab editor with variants",
+      "strategy": "Build",
+      "implementation": "Define reusable prefab schema, variant inheritance, override provenance and circular-ref checks.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-007",
+      "name": "level and tilemap editor",
+      "strategy": "Compose",
+      "implementation": "Import LDtk/Tiled layouts; build only the minimal on-canvas placement tools missing.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-008",
+      "name": "collision/hitbox editor",
+      "strategy": "Compose",
+      "implementation": "Overlay physics shapes in viewport with snapping and hitbox asset validation.",
+      "wave": "E",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-009",
+      "name": "timeline and cinematic editor",
+      "strategy": "Compose",
+      "implementation": "Use timeline UI over SGE animation tracks; scrub frames without altering game-clock state.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-010",
+      "name": "particle/VFX authoring UI",
+      "strategy": "Compose",
+      "implementation": "Provide particle preset authoring with strict GPU/particle budget preview.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-011",
+      "name": "visual state machine editor",
+      "strategy": "Adapt",
+      "implementation": "Use React Flow for graph UI and compile edges to typed state-machine definitions.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-012",
+      "name": "visual scripting with sandboxed nodes",
+      "strategy": "Compose",
+      "implementation": "Use Rete.js nodes with allowlisted command set; prohibit arbitrary untrusted eval.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-013",
+      "name": "character and ability editor",
+      "strategy": "Build",
+      "implementation": "Build domain inspector for characters, stats, abilities and constraint violations.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-014",
+      "name": "missions/storyboard editor",
+      "strategy": "Compose",
+      "implementation": "Use graph editor and storyboard board mapped to mission/dialogue schemas.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-015",
+      "name": "UI responsive preview",
+      "strategy": "Compose",
+      "implementation": "Mount portrait/landscape device frames with safe-area and font-scale presets.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-016",
+      "name": "theme design tokens",
+      "strategy": "Build",
+      "implementation": "Expose centralized design tokens and live theme editor with per-game overrides.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-017",
+      "name": "asset browser and preview",
+      "strategy": "Compose",
+      "implementation": "Create searchable asset registry with previews, license flags, sizes and dependency references.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-018",
+      "name": "live runtime debug view",
+      "strategy": "Adapt",
+      "implementation": "Connect local runtime debug bridge to event/state snapshots; no remote secrets in Studio.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-019",
+      "name": "input mapping editor",
+      "strategy": "Compose",
+      "implementation": "Generate input-binding UI from action schema, include conflict and accessibility warnings.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-020",
+      "name": "performance panel",
+      "strategy": "Compose",
+      "implementation": "Display sampled FPS, frame-time percentiles, heap/texture budgets and recent regressions.",
+      "wave": "E",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-021",
+      "name": "build & release panel",
+      "strategy": "Compose",
+      "implementation": "Invoke CI/local CLI build manifests, streaming logs and explicit release approvals.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-022",
+      "name": "project dependency graph",
+      "strategy": "Compose",
+      "implementation": "Visualize asset and plugin DAG from manifests, surface cycles and incompatible constraints.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-023",
+      "name": "plugin manager",
+      "strategy": "Build",
+      "implementation": "Build signed/allowlisted plugin registry and version compatibility inspector.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-024",
+      "name": "built-in docs and samples",
+      "strategy": "Compose",
+      "implementation": "Embed generated MDX/typed API docs and runnable starter examples.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-025",
+      "name": "crash report viewer",
+      "strategy": "Compose",
+      "implementation": "Read consent-safe crash reports and source maps with symbol access permissions.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-026",
+      "name": "accessibility preview",
+      "strategy": "Compose",
+      "implementation": "Overlay touch target, contrast, safe-area and reduced-motion checks in UI preview.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-11-027",
+      "name": "source diff awareness",
+      "strategy": "Build",
+      "implementation": "Make editor changes atomic, diffable and code-reviewable; refuse overwrite conflicts.",
+      "wave": "E",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-12-001",
+      "name": "HUD and UI layout primitives",
+      "strategy": "Compose",
+      "implementation": "Provide renderer-neutral HUD components and adapter-specific mounting strategies.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-12-002",
+      "name": "responsive typography and scaling",
+      "strategy": "Compose",
+      "implementation": "Implement font scale tokens, viewport units and layout tests for long translations.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-12-003",
+      "name": "safe-area-aware layout",
+      "strategy": "Compose",
+      "implementation": "Use safe-area insets and orientation profiles to place interactive elements.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-12-004",
+      "name": "2D overlays on 3D worlds",
+      "strategy": "Adapt",
+      "implementation": "Use Babylon 3D→2D projection and Pixi/DOM overlay mounting contract.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-12-005",
+      "name": "loading/splash/first-run flows",
+      "strategy": "Build",
+      "implementation": "Define reusable splash, welcome, first-run and consent-ready navigation states.",
+      "wave": "D",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-12-006",
+      "name": "navigation and back-stack",
+      "strategy": "Build",
+      "implementation": "Implement navigation history with predictable Back/pause overlay and state retention.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-12-007",
+      "name": "UI themes and reusable components",
+      "strategy": "Compose",
+      "implementation": "Package UI primitives/themes as versioned components, keep visual identity per game.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-12-008",
+      "name": "screen transitions",
+      "strategy": "Adapt",
+      "implementation": "Implement interruptible screen transitions with reduced-motion alternatives.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-12-009",
+      "name": "notifications and toast semantics",
+      "strategy": "Build",
+      "implementation": "Prioritize game alerts in safe-screen region; deduplicate and time out appropriately.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-12-010",
+      "name": "forms and input focus",
+      "strategy": "Compose",
+      "implementation": "Validate form fields, keyboard focus, soft keyboard resize and recovery behavior.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-12-011",
+      "name": "gamepad UI navigation",
+      "strategy": "Build",
+      "implementation": "Convert gamepad directional inputs to focus graph with visible selection indicator.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-12-012",
+      "name": "color contrast and color-blind palettes",
+      "strategy": "Compose",
+      "implementation": "Run contrast checks and supply alternative color-blind-safe semantic palettes.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-12-013",
+      "name": "remappable controls",
+      "strategy": "Compose",
+      "implementation": "Expose remapping UI backed by input manager profiles, reject unresolvable conflicts.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-12-014",
+      "name": "subtitle sizing and backgrounds",
+      "strategy": "Build",
+      "implementation": "Define subtitle safe area, text size and background contrast controls.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-12-015",
+      "name": "reduced motion and flashing safeguards",
+      "strategy": "Compose",
+      "implementation": "Honor reduced-motion and photosensitivity settings; provide effects intensity presets.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-12-016",
+      "name": "left-handed control profiles",
+      "strategy": "Build",
+      "implementation": "Provide mirrored virtual input layout presets and per-user persistence.",
+      "wave": "D",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-12-017",
+      "name": "touch target sizing",
+      "strategy": "Compose",
+      "implementation": "Enforce touch target policy and measure actual hit regions on phone screenshots.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-12-018",
+      "name": "localization and pseudolocalization",
+      "strategy": "Compose",
+      "implementation": "Use ICU/message-format localization adapters with pseudo-locale visual regression tests.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-12-019",
+      "name": "RTL readiness",
+      "strategy": "Build",
+      "implementation": "Support RTL layout mirroring where semantics permit; test mixed numerals/text.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-12-020",
+      "name": "offline and connection states",
+      "strategy": "Build",
+      "implementation": "Define visible connection states and offline-first flows without dead-end buttons.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-12-021",
+      "name": "error/empty/loading states",
+      "strategy": "Build",
+      "implementation": "Publish typed async UI state conventions and retry/failure actions for every screen.",
+      "wave": "D",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-12-022",
+      "name": "accessibility settings persistence",
+      "strategy": "Compose",
+      "implementation": "Persist accessibility preferences within profile saves and apply before first gameplay frame.",
+      "wave": "D",
+      "acceptance": "Visual golden + interactive smoke + low-end Android and browser fallback test.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-13-001",
+      "name": "Save schema versioning",
+      "strategy": "Build",
+      "implementation": "Create game-specific versioned JSON/binary save schema and migration registry.",
+      "wave": "B",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-13-002",
+      "name": "atomic writes and validation",
+      "strategy": "Build",
+      "implementation": "Write staged value, validate and atomically activate IndexedDB record pointer.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-13-003",
+      "name": "local persistence and quotas",
+      "strategy": "Adapt",
+      "implementation": "Use Dexie over IndexedDB with quota estimation, eviction policy and failure states.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-13-004",
+      "name": "autosave and checkpoints",
+      "strategy": "Build",
+      "implementation": "Trigger autosaves at safe gameplay boundaries and rate-limit writes under load.",
+      "wave": "B",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-13-005",
+      "name": "game snapshot and event log",
+      "strategy": "Build",
+      "implementation": "Define snapshot plus append-only event format and retention compaction rules.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-13-006",
+      "name": "migration and rollback policy",
+      "strategy": "Build",
+      "implementation": "Provide forward-only migration and fallback compatibility policy with fixtures.",
+      "wave": "B",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-13-007",
+      "name": "import/export backup",
+      "strategy": "Compose",
+      "implementation": "Export/import portable archives with schema, checksum, source-game metadata and review.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-13-008",
+      "name": "corrupted save fallback",
+      "strategy": "Build",
+      "implementation": "Detect malformed saves, quarantine broken data and recover last known good record.",
+      "wave": "B",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-13-009",
+      "name": "profile separation",
+      "strategy": "Build",
+      "implementation": "Namespace all local data by game/profile; reject accidental cross-game reads.",
+      "wave": "B",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-13-010",
+      "name": "guest account persistence",
+      "strategy": "Build",
+      "implementation": "Support anonymous profile IDs with optional later consent-based account linking.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-13-011",
+      "name": "offline conflict policy",
+      "strategy": "Build",
+      "implementation": "Define explicit conflict resolution for offline edits and cloud sync timestamps.",
+      "wave": "B",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-13-012",
+      "name": "optional cloud-save adapter",
+      "strategy": "Adapt",
+      "implementation": "Define optional cloud storage adapter without requiring login for offline single-player.",
+      "wave": "B",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-13-013",
+      "name": "encryption of sensitive data",
+      "strategy": "Compose",
+      "implementation": "Encrypt only actual sensitive fields with managed keys; do not confuse hashing with encryption.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-13-014",
+      "name": "privacy-driven deletion",
+      "strategy": "Build",
+      "implementation": "Implement full profile deletion for local stores/cache and optional remote systems.",
+      "wave": "B",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-13-015",
+      "name": "integrity checks",
+      "strategy": "Compose",
+      "implementation": "Store content hashes and integrity markers; treat client-controlled integrity as non-authoritative.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-13-016",
+      "name": "deterministic replay schema",
+      "strategy": "Build",
+      "implementation": "Serialize action frames/seeds with versioned replay format and compatibility gate.",
+      "wave": "B",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-13-017",
+      "name": "settings sync contracts",
+      "strategy": "Build",
+      "implementation": "Store settings as typed patchable data; sync only on opt-in.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-13-018",
+      "name": "asset catalog version compatibility",
+      "strategy": "Build",
+      "implementation": "Bind saves to asset/content-version ranges; test missing/downgraded content recovery.",
+      "wave": "B",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-001",
+      "name": "Guest-first offline mode",
+      "strategy": "Build",
+      "implementation": "Make networking an optional plugin; ship offline single-player without a server request.",
+      "wave": "G",
+      "acceptance": "Authoritative server integration + duplicate/packet-loss/rejoin/abuse scenarios under load.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-002",
+      "name": "authoritative command validation",
+      "strategy": "Adapt",
+      "implementation": "Validate player actions through authoritative Colyseus room command handlers.",
+      "wave": "G",
+      "acceptance": "Authoritative server integration + duplicate/packet-loss/rejoin/abuse scenarios under load.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-003",
+      "name": "matchmaking and lobby",
+      "strategy": "Adapt",
+      "implementation": "Use Colyseus room discovery or lobby service; expose stable matchmaking API.",
+      "wave": "G",
+      "acceptance": "Authoritative server integration + duplicate/packet-loss/rejoin/abuse scenarios under load.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-004",
+      "name": "room lifecycle",
+      "strategy": "Adapt",
+      "implementation": "Map session create/join/leave/close into room lifecycle and cleanup hooks.",
+      "wave": "G",
+      "acceptance": "Authoritative server integration + duplicate/packet-loss/rejoin/abuse scenarios under load.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-005",
+      "name": "secure join tokens",
+      "strategy": "Build",
+      "implementation": "Issue short-lived signed join tickets with narrow room and role permissions.",
+      "wave": "G",
+      "acceptance": "Authoritative server integration + duplicate/packet-loss/rejoin/abuse scenarios under load.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-006",
+      "name": "connection lifecycle and reconnection",
+      "strategy": "Adapt",
+      "implementation": "Use reconnect tokens, heartbeat and explicit session-expiry policies.",
+      "wave": "G",
+      "acceptance": "Authoritative server integration + duplicate/packet-loss/rejoin/abuse scenarios under load.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-007",
+      "name": "rate limits and anti-abuse",
+      "strategy": "Compose",
+      "implementation": "Compose request/command rate limiting, abuse counters and quarantine controls server-side.",
+      "wave": "G",
+      "acceptance": "Authoritative server integration + duplicate/packet-loss/rejoin/abuse scenarios under load.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-008",
+      "name": "clock sync",
+      "strategy": "Build",
+      "implementation": "Measure client/server offset and latency without trusting client-supplied wall time.",
+      "wave": "G",
+      "acceptance": "Authoritative server integration + duplicate/packet-loss/rejoin/abuse scenarios under load.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-009",
+      "name": "turn-based command sequence and idempotency",
+      "strategy": "Build",
+      "implementation": "Assign per-player sequence IDs and idempotency receipts to turn commands.",
+      "wave": "G",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-010",
+      "name": "state snapshots and delta sync",
+      "strategy": "Adapt",
+      "implementation": "Use Colyseus state schema/delta transport behind SGE network snapshot adapter.",
+      "wave": "G",
+      "acceptance": "Authoritative server integration + duplicate/packet-loss/rejoin/abuse scenarios under load.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-011",
+      "name": "lag compensation and prediction for twitch games",
+      "strategy": "Build",
+      "implementation": "Implement optional client prediction, reconciliation and lag compensation game-by-game.",
+      "wave": "G",
+      "acceptance": "Authoritative server integration + duplicate/packet-loss/rejoin/abuse scenarios under load.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-012",
+      "name": "session rejoin/recovery",
+      "strategy": "Compose",
+      "implementation": "Persist room resume metadata and recover from disconnect, TTL expiration and process loss.",
+      "wave": "G",
+      "acceptance": "Authoritative server integration + duplicate/packet-loss/rejoin/abuse scenarios under load.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-013",
+      "name": "cross-device state consistency",
+      "strategy": "Build",
+      "implementation": "Version server-state snapshots and reject incompatible cross-device clients gracefully.",
+      "wave": "G",
+      "acceptance": "Authoritative server integration + duplicate/packet-loss/rejoin/abuse scenarios under load.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-014",
+      "name": "region placement and latency",
+      "strategy": "Compose",
+      "implementation": "Choose server regions from measured latency/cost; avoid premature multi-region state.",
+      "wave": "G",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-015",
+      "name": "persistence for durable match results",
+      "strategy": "Compose",
+      "implementation": "Persist settled match outcomes in durable DB with duplicate-safe transactions.",
+      "wave": "G",
+      "acceptance": "Authoritative server integration + duplicate/packet-loss/rejoin/abuse scenarios under load.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-016",
+      "name": "DB/Redis coordination only as necessary",
+      "strategy": "Compose",
+      "implementation": "Use Redis only when room distribution/presence demands it; never for durable match truth.",
+      "wave": "G",
+      "acceptance": "Authoritative server integration + duplicate/packet-loss/rejoin/abuse scenarios under load.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-017",
+      "name": "queue backpressure and circuit breakers",
+      "strategy": "Build",
+      "implementation": "Bound outbound queues, drop nonessential updates and protect server with circuit breakers.",
+      "wave": "G",
+      "acceptance": "Authoritative server integration + duplicate/packet-loss/rejoin/abuse scenarios under load.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-018",
+      "name": "replay and dispute audit",
+      "strategy": "Build",
+      "implementation": "Save authoritative input/event traces for disputes with privacy/retention controls.",
+      "wave": "G",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-019",
+      "name": "anti-cheat threat model",
+      "strategy": "Build",
+      "implementation": "Threat-model score, teleport, cooldown, speed and message tampering per game.",
+      "wave": "G",
+      "acceptance": "Authoritative server integration + duplicate/packet-loss/rejoin/abuse scenarios under load.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-020",
+      "name": "bot/AFK and disconnect policy",
+      "strategy": "Build",
+      "implementation": "Define AFK timers, bot substitution and graceful disconnect victory rules.",
+      "wave": "G",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-021",
+      "name": "party and invite flows",
+      "strategy": "Compose",
+      "implementation": "Compose party lobby + invite code with expiring, rate-limited token management.",
+      "wave": "G",
+      "acceptance": "Authoritative server integration + duplicate/packet-loss/rejoin/abuse scenarios under load.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-022",
+      "name": "spectator mode optional",
+      "strategy": "Adapt",
+      "implementation": "Use room read-only observers with explicit per-game visibility policy if enabled.",
+      "wave": "G",
+      "acceptance": "Authoritative server integration + duplicate/packet-loss/rejoin/abuse scenarios under load.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-14-023",
+      "name": "chat and moderation optional",
+      "strategy": "Compose",
+      "implementation": "Gate optional text chat behind moderation, reporting and data-retention controls.",
+      "wave": "G",
+      "acceptance": "Authoritative server integration + duplicate/packet-loss/rejoin/abuse scenarios under load.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-001",
+      "name": "Reusable game CLI scaffolds",
+      "strategy": "Build",
+      "implementation": "Create `sge create/build/test/dev` CLI with versioned generator templates.",
+      "wave": "F",
+      "acceptance": "Clean isolated build; hashes/signing/install/smoke/rollback; repeat-build comparison.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-002",
+      "name": "reproducible lockfiles",
+      "strategy": "Reuse",
+      "implementation": "Use pnpm lockfile and frozen installs; reject non-reproducible dependency drift.",
+      "wave": "F",
+      "acceptance": "Clean isolated build; hashes/signing/install/smoke/rollback; repeat-build comparison.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-003",
+      "name": "hermetic build configuration",
+      "strategy": "Compose",
+      "implementation": "Pin Node/Java toolchain versions and normalized build environments.",
+      "wave": "F",
+      "acceptance": "Clean isolated build; hashes/signing/install/smoke/rollback; repeat-build comparison.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-004",
+      "name": "per-game feature manifests",
+      "strategy": "Build",
+      "implementation": "Define typed game.manifest with only required features and supported platforms.",
+      "wave": "F",
+      "acceptance": "Clean isolated build; hashes/signing/install/smoke/rollback; repeat-build comparison.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-005",
+      "name": "conditional dependency bundling",
+      "strategy": "Compose",
+      "implementation": "Build runtime entrypoints via manifest-driven dynamic imports, no giant global bundle.",
+      "wave": "F",
+      "acceptance": "Clean isolated build; hashes/signing/install/smoke/rollback; repeat-build comparison.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-006",
+      "name": "tree shaking and code splitting",
+      "strategy": "Adapt",
+      "implementation": "Use Vite/Rollup tree-shaking and bundle analysis with per-entry budgets.",
+      "wave": "F",
+      "acceptance": "Clean isolated build; hashes/signing/install/smoke/rollback; repeat-build comparison.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-007",
+      "name": "asset cooking and packaging",
+      "strategy": "Compose",
+      "implementation": "Orchestrate asset DAG cooking and include only referenced bundles in outputs.",
+      "wave": "F",
+      "acceptance": "Clean isolated build; hashes/signing/install/smoke/rollback; repeat-build comparison.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-008",
+      "name": "Web/PWA export and service workers",
+      "strategy": "Adapt",
+      "implementation": "Use Vite + Workbox for PWA, cache versioning and offline update strategy.",
+      "wave": "F",
+      "acceptance": "Clean isolated build; hashes/signing/install/smoke/rollback; repeat-build comparison.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-009",
+      "name": "Android project scaffolding",
+      "strategy": "Adapt",
+      "implementation": "Generate Capacitor app shell and Android Gradle project per game identity.",
+      "wave": "F",
+      "acceptance": "Clean isolated build; hashes/signing/install/smoke/rollback; repeat-build comparison.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-010",
+      "name": "signed APK and AAB build",
+      "strategy": "Compose",
+      "implementation": "Drive Gradle signed APK/AAB builds from secure CLI profiles; emit verifier report.",
+      "wave": "F",
+      "acceptance": "Clean isolated build; hashes/signing/install/smoke/rollback; repeat-build comparison.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-011",
+      "name": "keystore backup and secrets handling",
+      "strategy": "Build",
+      "implementation": "Keep signing keys outside repo; document encrypted backup and disaster recovery.",
+      "wave": "F",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-012",
+      "name": "Android target API compatibility",
+      "strategy": "Compose",
+      "implementation": "Validate Android target SDK and Play requirements using Android SDK build tools.",
+      "wave": "F",
+      "acceptance": "Clean isolated build; hashes/signing/install/smoke/rollback; repeat-build comparison.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-013",
+      "name": "ABI and 16 KB page-size policy for native libraries",
+      "strategy": "Compose",
+      "implementation": "Inspect any native binaries for ABI and page-size compatibility as policies evolve.",
+      "wave": "F",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-014",
+      "name": "texture format targeting optional",
+      "strategy": "Compose",
+      "implementation": "Choose texture pack variants per GPU support; test fallback path before optional targeting.",
+      "wave": "F",
+      "acceptance": "Clean isolated build; hashes/signing/install/smoke/rollback; repeat-build comparison.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-015",
+      "name": "CDN and cache-control policy",
+      "strategy": "Build",
+      "implementation": "Generate immutable asset URLs, service-worker cache policy and safe CDN invalidation.",
+      "wave": "F",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-016",
+      "name": "hashes and software bill of materials",
+      "strategy": "Compose",
+      "implementation": "Generate SHA-256 hashes, SBOM, license/notice file and artifact provenance manifest.",
+      "wave": "F",
+      "acceptance": "Clean isolated build; hashes/signing/install/smoke/rollback; repeat-build comparison.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-017",
+      "name": "source-map and debug symbol handling",
+      "strategy": "Compose",
+      "implementation": "Separate development source maps from public builds; store symbols with access controls.",
+      "wave": "F",
+      "acceptance": "Clean isolated build; hashes/signing/install/smoke/rollback; repeat-build comparison.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-018",
+      "name": "release channels and staged rollout",
+      "strategy": "Build",
+      "implementation": "Support alpha/beta/stable channels and signed staged deployment manifests.",
+      "wave": "F",
+      "acceptance": "Clean isolated build; hashes/signing/install/smoke/rollback; repeat-build comparison.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-019",
+      "name": "app-version and content-version contract",
+      "strategy": "Build",
+      "implementation": "Maintain independent binary version, SDK version and cooked-content version matrices.",
+      "wave": "F",
+      "acceptance": "Clean isolated build; hashes/signing/install/smoke/rollback; repeat-build comparison.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-020",
+      "name": "rollback and disaster recovery",
+      "strategy": "Build",
+      "implementation": "Implement reversible PWA content activation and Android staged rollout playbooks.",
+      "wave": "F",
+      "acceptance": "Clean isolated build; hashes/signing/install/smoke/rollback; repeat-build comparison.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-021",
+      "name": "platform store metadata generation",
+      "strategy": "Build",
+      "implementation": "Generate store text/screenshots/checklists from game metadata but require human review.",
+      "wave": "F",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-022",
+      "name": "release notes and changelog",
+      "strategy": "Compose",
+      "implementation": "Generate semver changelogs from structured changes and release approval records.",
+      "wave": "F",
+      "acceptance": "Clean isolated build; hashes/signing/install/smoke/rollback; repeat-build comparison.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-15-023",
+      "name": "versioned API compatibility",
+      "strategy": "Build",
+      "implementation": "Enforce SDK API compatibility and migration policy via automated client fixtures.",
+      "wave": "F",
+      "acceptance": "Clean isolated build; hashes/signing/install/smoke/rollback; repeat-build comparison.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-001",
+      "name": "Unit and property-based tests",
+      "strategy": "Compose",
+      "implementation": "Use Vitest and fast-check for units, invariants, edge cases and shrinking failures.",
+      "wave": "B onward",
+      "acceptance": "Test harness proves it catches a deliberately injected regression; archive artifact/evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-002",
+      "name": "deterministic simulation golden tests",
+      "strategy": "Build",
+      "implementation": "Replay seeded inputs into headless simulation and assert state hash golden fixtures.",
+      "wave": "B onward",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-003",
+      "name": "genre rule test oracles",
+      "strategy": "Build",
+      "implementation": "Build independent game-rule test oracle for Chess legality, puzzle clearing and scoring.",
+      "wave": "B onward",
+      "acceptance": "Test harness proves it catches a deliberately injected regression; archive artifact/evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-004",
+      "name": "integration and contract tests",
+      "strategy": "Compose",
+      "implementation": "Use Vitest API contracts and cross-package integration fixture games.",
+      "wave": "B onward",
+      "acceptance": "Test harness proves it catches a deliberately injected regression; archive artifact/evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-005",
+      "name": "UI and navigation E2E",
+      "strategy": "Adapt",
+      "implementation": "Use Playwright for real browser flow, menus, controls, saves and error paths.",
+      "wave": "B onward",
+      "acceptance": "Test harness proves it catches a deliberately injected regression; archive artifact/evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-006",
+      "name": "visual snapshot comparison",
+      "strategy": "Adapt",
+      "implementation": "Compare Playwright screenshots against approved golden images at fixed device profiles.",
+      "wave": "B onward",
+      "acceptance": "Test harness proves it catches a deliberately injected regression; archive artifact/evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-007",
+      "name": "physics and collision fuzz tests",
+      "strategy": "Compose",
+      "implementation": "Fuzz Rapier/Havok collision scenes and check crashes, penetrations and stability bounds.",
+      "wave": "B onward",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-008",
+      "name": "asset validation and missing asset tests",
+      "strategy": "Compose",
+      "implementation": "Run import validators on valid, malformed, oversized and missing assets.",
+      "wave": "B onward",
+      "acceptance": "Test harness proves it catches a deliberately injected regression; archive artifact/evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-009",
+      "name": "save migration/property tests",
+      "strategy": "Build",
+      "implementation": "Property-test migration across all supported save schema versions and failed writes.",
+      "wave": "B onward",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-010",
+      "name": "crash recovery and offline tests",
+      "strategy": "Compose",
+      "implementation": "Use Playwright/Android harness for airplane mode, app kill, offline start and recovery.",
+      "wave": "B onward",
+      "acceptance": "Test harness proves it catches a deliberately injected regression; archive artifact/evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-011",
+      "name": "device and browser matrix",
+      "strategy": "Compose",
+      "implementation": "Test Chromium, Firefox, WebKit plus required Android browsers/WebViews on coverage matrix.",
+      "wave": "B onward",
+      "acceptance": "Test harness proves it catches a deliberately injected regression; archive artifact/evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-012",
+      "name": "real Android background/thermal testing",
+      "strategy": "Compose",
+      "implementation": "Execute real Android lifecycle, thermal throttling and resumed-scene tests.",
+      "wave": "B onward",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-013",
+      "name": "FPS frame time percentiles",
+      "strategy": "Build",
+      "implementation": "Collect P50/P95/P99 update, render and total frame times over representative scenes.",
+      "wave": "B onward",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-014",
+      "name": "heap and GPU memory tests",
+      "strategy": "Compose",
+      "implementation": "Measure heap growth, retained textures and GPU memory proxies in soak scenarios.",
+      "wave": "B onward",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-015",
+      "name": "startup and bundle-size budgets",
+      "strategy": "Compose",
+      "implementation": "Fail budgets on initial bytes, load critical path and start-to-interactive time.",
+      "wave": "B onward",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-016",
+      "name": "power and thermal measurements",
+      "strategy": "Compose",
+      "implementation": "Measure battery drain/thermal via supported Android profiling tools and fixed test procedure.",
+      "wave": "B onward",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-017",
+      "name": "long-soak and repeated-session tests",
+      "strategy": "Build",
+      "implementation": "Run repeat sessions and long soaks with scene transitions, save/write churn and restart.",
+      "wave": "B onward",
+      "acceptance": "Test harness proves it catches a deliberately injected regression; archive artifact/evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-018",
+      "name": "network fault/packet-loss/latency simulation",
+      "strategy": "Compose",
+      "implementation": "Inject packet loss, latency, reordering and disconnects in network test harness.",
+      "wave": "B onward",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-019",
+      "name": "multiplayer load and chaos tests",
+      "strategy": "Compose",
+      "implementation": "Drive Colyseus load generator with realistic room sizes, join bursts and latency SLOs.",
+      "wave": "B onward",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-020",
+      "name": "vulnerability and secret scan",
+      "strategy": "Compose",
+      "implementation": "Scan dependency tree, secrets and known vulnerabilities with documented triage rules.",
+      "wave": "B onward",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-021",
+      "name": "license compliance and SBOM checks",
+      "strategy": "Compose",
+      "implementation": "Generate SBOM/licenses/NOTICE and block forbidden or unresolved dependency findings.",
+      "wave": "B onward",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-022",
+      "name": "accessibility audit",
+      "strategy": "Compose",
+      "implementation": "Use axe-core plus manual controller/screen-reader checks on supported UI surfaces.",
+      "wave": "B onward",
+      "acceptance": "Test harness proves it catches a deliberately injected regression; archive artifact/evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-023",
+      "name": "localization/pseudoloc checks",
+      "strategy": "Compose",
+      "implementation": "Automate pseudolocales and visual truncation/RTL checks for every UI state.",
+      "wave": "B onward",
+      "acceptance": "Test harness proves it catches a deliberately injected regression; archive artifact/evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-024",
+      "name": "tampering and anti-cheat scenarios",
+      "strategy": "Build",
+      "implementation": "Test invalid commands, spoofed scores, replayed purchases and tampered content manifests.",
+      "wave": "B onward",
+      "acceptance": "Test harness proves it catches a deliberately injected regression; archive artifact/evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-025",
+      "name": "feature-flag rollback tests",
+      "strategy": "Build",
+      "implementation": "Exercise old/new config transitions, rejected remote updates and rollback correctness.",
+      "wave": "B onward",
+      "acceptance": "Test harness proves it catches a deliberately injected regression; archive artifact/evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-026",
+      "name": "release candidate smoke test",
+      "strategy": "Compose",
+      "implementation": "Smoke a signed release candidate on clean device, offline device and PWA before rollout.",
+      "wave": "B onward",
+      "acceptance": "Test harness proves it catches a deliberately injected regression; archive artifact/evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-16-027",
+      "name": "human gameplay signoff",
+      "strategy": "Build",
+      "implementation": "Require recorded human gameplay assessment, defects disposition and actual signoff.",
+      "wave": "B onward",
+      "acceptance": "Test harness proves it catches a deliberately injected regression; archive artifact/evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-17-001",
+      "name": "Crash and ANR monitoring",
+      "strategy": "Compose",
+      "implementation": "Use Android vitals/optional self-hosted telemetry only with explicit app policy and consent.",
+      "wave": "H",
+      "acceptance": "Telemetry/event schema validation, opt-out and rollback drill with versioned evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-17-002",
+      "name": "consent-aware telemetry",
+      "strategy": "Build",
+      "implementation": "Define privacy-minimal event collection with consent and local opt-out persistence.",
+      "wave": "H",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-17-003",
+      "name": "opt-out/retention controls",
+      "strategy": "Build",
+      "implementation": "Enforce retention and user deletion; do not log unique identifiers by default.",
+      "wave": "H",
+      "acceptance": "Telemetry/event schema validation, opt-out and rollback drill with versioned evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-17-004",
+      "name": "frame-time analytics",
+      "strategy": "Build",
+      "implementation": "Aggregate frame times by renderer, GPU tier and game version without raw personal data.",
+      "wave": "H",
+      "acceptance": "Telemetry/event schema validation, opt-out and rollback drill with versioned evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-17-005",
+      "name": "load error dashboards",
+      "strategy": "Compose",
+      "implementation": "Create asset/load failure dashboards from sanitized local/opt-in telemetry.",
+      "wave": "H",
+      "acceptance": "Run representative benchmark/device matrix, record p50/p95/p99 or size/RAM budget and regression delta.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-17-006",
+      "name": "feature flag and safe configuration",
+      "strategy": "Build",
+      "implementation": "Use versioned safe feature flags and defaults bundled inside the game.",
+      "wave": "H",
+      "acceptance": "Telemetry/event schema validation, opt-out and rollback drill with versioned evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-17-007",
+      "name": "analytics event schema and quality",
+      "strategy": "Build",
+      "implementation": "Define event schema, invariants and deduplicated delivery for analytics quality.",
+      "wave": "H",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-17-008",
+      "name": "funnel/cohort analysis optional",
+      "strategy": "Compose",
+      "implementation": "Build optional anonymous funnel/cohort summaries with minimum aggregation thresholds.",
+      "wave": "H",
+      "acceptance": "Telemetry/event schema validation, opt-out and rollback drill with versioned evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-17-009",
+      "name": "game balancing and event calendar",
+      "strategy": "Build",
+      "implementation": "Version balance tables and event-calendar content with human playtest approval.",
+      "wave": "H",
+      "acceptance": "Telemetry/event schema validation, opt-out and rollback drill with versioned evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-17-010",
+      "name": "versioned remote configuration",
+      "strategy": "Build",
+      "implementation": "Validate signed remote-config schemas and prevent unsupported-client rollout.",
+      "wave": "H",
+      "acceptance": "Telemetry/event schema validation, opt-out and rollback drill with versioned evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-17-011",
+      "name": "rollback/pause switches",
+      "strategy": "Build",
+      "implementation": "Provide rollout pause, safe config defaults and rollback switch per game.",
+      "wave": "H",
+      "acceptance": "Telemetry/event schema validation, opt-out and rollback drill with versioned evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-17-012",
+      "name": "content delivery and patch integrity",
+      "strategy": "Compose",
+      "implementation": "Reuse Asset Factory signature/manifest activation for optional remote patches.",
+      "wave": "H",
+      "acceptance": "Telemetry/event schema validation, opt-out and rollback drill with versioned evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-17-013",
+      "name": "leaderboards and seasonal events",
+      "strategy": "Compose",
+      "implementation": "Compose verified seasonal scoreboards with optional server-authoritative leaderboard.",
+      "wave": "H",
+      "acceptance": "Telemetry/event schema validation, opt-out and rollback drill with versioned evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-17-014",
+      "name": "incident response playbooks",
+      "strategy": "Build",
+      "implementation": "Document severity categories, rollback procedure, owner contacts and incident timeline.",
+      "wave": "H",
+      "acceptance": "Telemetry/event schema validation, opt-out and rollback drill with versioned evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-17-015",
+      "name": "cost telemetry",
+      "strategy": "Compose",
+      "implementation": "Measure hosting, bandwidth, storage and room compute per game with cost alerts.",
+      "wave": "H",
+      "acceptance": "Telemetry/event schema validation, opt-out and rollback drill with versioned evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-17-016",
+      "name": "operational alerts",
+      "strategy": "Compose",
+      "implementation": "Trigger alerts from defined SLO thresholds rather than noisy individual events.",
+      "wave": "H",
+      "acceptance": "Telemetry/event schema validation, opt-out and rollback drill with versioned evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-17-017",
+      "name": "backup/restore drills",
+      "strategy": "Compose",
+      "implementation": "Regularly restore backups to scratch environment and compare checksums/fixture data.",
+      "wave": "H",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-17-018",
+      "name": "player support workflow",
+      "strategy": "Build",
+      "implementation": "Create in-game help/export bug report flow with optional attachment consent.",
+      "wave": "H",
+      "acceptance": "Telemetry/event schema validation, opt-out and rollback drill with versioned evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-17-019",
+      "name": "issue triage and crash grouping",
+      "strategy": "Compose",
+      "implementation": "Normalize errors and versions, group issues and link each to regression test.",
+      "wave": "H",
+      "acceptance": "Telemetry/event schema validation, opt-out and rollback drill with versioned evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-17-020",
+      "name": "release impact monitoring",
+      "strategy": "Build",
+      "implementation": "Compare crash, performance and startup metrics by staged rollout cohort.",
+      "wave": "H",
+      "acceptance": "Telemetry/event schema validation, opt-out and rollback drill with versioned evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-17-021",
+      "name": "deprecation and end-of-life plan",
+      "strategy": "Build",
+      "implementation": "Define archive/read-only/end-of-life obligations and notify players on retirements.",
+      "wave": "H",
+      "acceptance": "Telemetry/event schema validation, opt-out and rollback drill with versioned evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-18-001",
+      "name": "Store listing assets and descriptions",
+      "strategy": "Compose",
+      "implementation": "Generate store listing copy, screenshots and icons from approved per-game metadata.",
+      "wave": "F onward",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-18-002",
+      "name": "privacy policy and data safety mapping",
+      "strategy": "Build",
+      "implementation": "Maintain privacy/data flow matrix; manually verify store data-safety declarations.",
+      "wave": "F onward",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-18-003",
+      "name": "age rating and audience policy",
+      "strategy": "Build",
+      "implementation": "Record audience, rating, kid/family constraints and game-specific content warnings.",
+      "wave": "F onward",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-18-004",
+      "name": "IP/license and trademark checks",
+      "strategy": "Compose",
+      "implementation": "Run attribution, copyright, trademark and asset-rights checklist before public shipping.",
+      "wave": "F onward",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-18-005",
+      "name": "attribution generator",
+      "strategy": "Build",
+      "implementation": "Generate NOTICE/credits from approved asset + dependency licenses; review exceptions.",
+      "wave": "F onward",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-18-006",
+      "name": "parental/families compliance where applicable",
+      "strategy": "Build",
+      "implementation": "Gate family-oriented releases on current platform policies and lawful consent requirements.",
+      "wave": "F onward",
+      "acceptance": "Store/policy checklist plus clean-device installation and human approval.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-18-007",
+      "name": "optional ads adapter and consent",
+      "strategy": "Adapt",
+      "implementation": "Provide optional ads interface; no ads SDK in games that don't explicitly enable it.",
+      "wave": "F onward",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-18-008",
+      "name": "optional in-app billing and purchase restore",
+      "strategy": "Adapt",
+      "implementation": "Provide optional Play Billing integration only when monetization is requested.",
+      "wave": "F onward",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-18-009",
+      "name": "entitlement validation on authoritative backend",
+      "strategy": "Build",
+      "implementation": "Verify server-side purchase entitlement and idempotent restore, never trust UI state.",
+      "wave": "F onward",
+      "acceptance": "Store/policy checklist plus clean-device installation and human approval.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-18-010",
+      "name": "regional pricing config",
+      "strategy": "Build",
+      "implementation": "Maintain currency/region pricing configurations with explicit published price reconciliation.",
+      "wave": "F onward",
+      "acceptance": "Store/policy checklist plus clean-device installation and human approval.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-18-011",
+      "name": "transparent offline-first monetization modes",
+      "strategy": "Build",
+      "implementation": "Allow free offline game without user account/ads where business model permits.",
+      "wave": "F onward",
+      "acceptance": "Store/policy checklist plus clean-device installation and human approval.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-18-012",
+      "name": "Play store release validations",
+      "strategy": "Compose",
+      "implementation": "Validate Android package identity, SDK, signing, app bundle, policy and testing tracks.",
+      "wave": "F onward",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-18-013",
+      "name": "ASO/SEO metadata",
+      "strategy": "Compose",
+      "implementation": "Generate ASO keywords/localized listings with editorial review, avoid misleading claims.",
+      "wave": "F onward",
+      "acceptance": "Store/policy checklist plus clean-device installation and human approval.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-18-014",
+      "name": "customer support and reporting paths",
+      "strategy": "Build",
+      "implementation": "Publish support/contact, crash report and issue escalation workflows.",
+      "wave": "F onward",
+      "acceptance": "Store/policy checklist plus clean-device installation and human approval.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-18-015",
+      "name": "subscription/refund handling if applicable",
+      "strategy": "Compose",
+      "implementation": "Handle refunds, purchase restores, webhook state and entitlement revocation when billing enabled.",
+      "wave": "F onward",
+      "acceptance": "Store/policy checklist plus clean-device installation and human approval.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-18-016",
+      "name": "business analytics and payout reconciliation",
+      "strategy": "Compose",
+      "implementation": "Reconcile store statements and payouts with purchase ledger before revenue reporting.",
+      "wave": "F onward",
+      "acceptance": "Store/policy checklist plus clean-device installation and human approval.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-19-001",
+      "name": "Public engine SDK contracts",
+      "strategy": "Build",
+      "implementation": "Publish stable TypeScript public API and generate compatibility fixtures on every release.",
+      "wave": "A onward",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-19-002",
+      "name": "plugin manifest and version ranges",
+      "strategy": "Build",
+      "implementation": "Version plugin manifests and validate semantic ranges before loading a plugin.",
+      "wave": "A onward",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-19-003",
+      "name": "template registry and examples",
+      "strategy": "Build",
+      "implementation": "Keep template catalog with tags, required features and verified sample output.",
+      "wave": "A onward",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-19-004",
+      "name": "API docs and type generation",
+      "strategy": "Compose",
+      "implementation": "Generate API docs/types from TS source and typed schemas on CI.",
+      "wave": "A onward",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-19-005",
+      "name": "local developer setup and one-command run",
+      "strategy": "Build",
+      "implementation": "Create one-command local bootstrap with prereq checks, helpful error messages and offline mode.",
+      "wave": "A onward",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-19-006",
+      "name": "ADRs and design docs",
+      "strategy": "Build",
+      "implementation": "Link design docs, ADRs and package ownership to code changes and release notes.",
+      "wave": "A onward",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-19-007",
+      "name": "searchable troubleshooting",
+      "strategy": "Compose",
+      "implementation": "Index docs, structured error IDs and FAQ for deterministic troubleshooting.",
+      "wave": "A onward",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-19-008",
+      "name": "code generators",
+      "strategy": "Compose",
+      "implementation": "Generate plugins/scenes/game boilerplate from validated templates, then run formatter/tests.",
+      "wave": "A onward",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-19-009",
+      "name": "lint/format/static analysis",
+      "strategy": "Reuse",
+      "implementation": "Use ESLint, Prettier and TypeScript strict checks with package boundary policies.",
+      "wave": "A onward",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-19-010",
+      "name": "dependency compatibility matrix",
+      "strategy": "Build",
+      "implementation": "Maintain matrix of runtime, renderer, browser, OS and plugin version compatibility.",
+      "wave": "A onward",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-19-011",
+      "name": "upgrade migration notes",
+      "strategy": "Build",
+      "implementation": "Publish explicit SDK upgrade steps, codemods and migration test fixtures.",
+      "wave": "A onward",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-19-012",
+      "name": "backward compatibility and deprecations",
+      "strategy": "Build",
+      "implementation": "Define deprecation window, fallback behavior and semver break verification.",
+      "wave": "A onward",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-19-013",
+      "name": "curated third-party plugin allowlist",
+      "strategy": "Build",
+      "implementation": "Curate approved third-party plugins with audits, rights and update ownership.",
+      "wave": "A onward",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-19-014",
+      "name": "plugin capability/permission sandbox",
+      "strategy": "Build",
+      "implementation": "Define plugin permissions, isolate Studio code where possible, prohibit untrusted runtime eval.",
+      "wave": "A onward",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-19-015",
+      "name": "changelog and semver",
+      "strategy": "Compose",
+      "implementation": "Generate changelog and artifact version tags from gated release metadata.",
+      "wave": "A onward",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-19-016",
+      "name": "sample and starter games",
+      "strategy": "Compose",
+      "implementation": "Ship Chess, Bubble and small renderer/physics fixture starter games.",
+      "wave": "A onward",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-19-017",
+      "name": "plugin conformance tests",
+      "strategy": "Build",
+      "implementation": "Run plugin conformance suite against lifecycle, permissions, disposal and ABI contracts.",
+      "wave": "A onward",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-19-018",
+      "name": "technical debt register",
+      "strategy": "Build",
+      "implementation": "Track refactor work and high-risk shortcuts as explicit technical-debt ledger entries.",
+      "wave": "A onward",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-19-019",
+      "name": "governance and owner approvals",
+      "strategy": "Build",
+      "implementation": "Require owner approval for architecture, supply-chain and release policy modifications.",
+      "wave": "A onward",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-19-020",
+      "name": "issue tracker with acceptance evidence",
+      "strategy": "Build",
+      "implementation": "Connect issue IDs, acceptance tests and artifacts to CAP IDs for evidence traceability.",
+      "wave": "A onward",
+      "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-20-001",
+      "name": "Least privilege and secret management",
+      "strategy": "Compose",
+      "implementation": "Use OS secret stores/CI secrets, minimal-scoped tokens and no secrets in clients.",
+      "wave": "A onward",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-20-002",
+      "name": "signed builds and provenance",
+      "strategy": "Compose",
+      "implementation": "Emit signed provenance, attestations where supported and reproducible artifact metadata.",
+      "wave": "A onward",
+      "acceptance": "Threat-model negative tests plus dependency/permission audit and reviewer evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-20-003",
+      "name": "pinned third party dependencies",
+      "strategy": "Reuse",
+      "implementation": "Pin package lockfile, hashes and trusted source registry with upgrade approval.",
+      "wave": "A onward",
+      "acceptance": "Threat-model negative tests plus dependency/permission audit and reviewer evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-20-004",
+      "name": "patch response and security advisories",
+      "strategy": "Build",
+      "implementation": "Define vulnerability response SLA, monitoring and patch release checklist.",
+      "wave": "A onward",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-20-005",
+      "name": "dependency review and license scanning",
+      "strategy": "Compose",
+      "implementation": "Use dependency audit, SBOM, license checker and manual high-risk supply-chain review.",
+      "wave": "A onward",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-20-006",
+      "name": "network transport encryption",
+      "strategy": "Reuse",
+      "implementation": "Require HTTPS/TLS for game API and WebSocket traffic with transport verification.",
+      "wave": "A onward",
+      "acceptance": "Threat-model negative tests plus dependency/permission audit and reviewer evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-20-007",
+      "name": "authoritative score and purchase validation",
+      "strategy": "Build",
+      "implementation": "Recalculate score/turn/purchase effects on authoritative backend with duplicate protection.",
+      "wave": "A onward",
+      "acceptance": "Threat-model negative tests plus dependency/permission audit and reviewer evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-20-008",
+      "name": "safe parsers for untrusted asset bundles",
+      "strategy": "Build",
+      "implementation": "Parse user bundles in bounded sandbox with path traversal, zip bomb and MIME safeguards.",
+      "wave": "A onward",
+      "acceptance": "Threat-model negative tests plus dependency/permission audit and reviewer evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-20-009",
+      "name": "editor plugin permission boundaries",
+      "strategy": "Build",
+      "implementation": "Declare editor-plugin permissions; prevent arbitrary workspace/network access by default.",
+      "wave": "A onward",
+      "acceptance": "Threat-model negative tests plus dependency/permission audit and reviewer evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-20-010",
+      "name": "user-generated content sanitization",
+      "strategy": "Build",
+      "implementation": "Sanitize/validate imported user text and assets; disallow executable script data by default.",
+      "wave": "A onward",
+      "acceptance": "Threat-model negative tests plus dependency/permission audit and reviewer evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-20-011",
+      "name": "telemetry consent and deletion",
+      "strategy": "Build",
+      "implementation": "Enforce explicit telemetry consent, retention and deletion from local/cloud sinks.",
+      "wave": "A onward",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-20-012",
+      "name": "private data lifecycle controls",
+      "strategy": "Build",
+      "implementation": "Partition private data by profile/account; maintain deletion/access request procedures.",
+      "wave": "A onward",
+      "acceptance": "Threat-model negative tests plus dependency/permission audit and reviewer evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-20-013",
+      "name": "release signature and manifest validation",
+      "strategy": "Compose",
+      "implementation": "Verify artifact signature, immutable manifest ID and allowed runtime version before activation.",
+      "wave": "A onward",
+      "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-20-014",
+      "name": "secure cloud save authorization",
+      "strategy": "Build",
+      "implementation": "Verify cloud save authorization per user/game; log and test cross-tenant access denial.",
+      "wave": "A onward",
+      "acceptance": "Seeded fixture, invalid-input/property test, save/restart or replay parity as applicable.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-20-015",
+      "name": "supply chain incident playbook",
+      "strategy": "Build",
+      "implementation": "Write compromise response, key rotation, dependency quarantine and rollback steps.",
+      "wave": "A onward",
+      "acceptance": "Threat-model negative tests plus dependency/permission audit and reviewer evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    },
+    {
+      "id": "CAP-20-016",
+      "name": "account and moderation abuse controls when activated",
+      "strategy": "Compose",
+      "implementation": "Activate anti-abuse/account/moderation controls only when online/social features launch.",
+      "wave": "A onward",
+      "acceptance": "Threat-model negative tests plus dependency/permission audit and reviewer evidence.",
+      "status": "PROPOSED",
+      "evidence": []
+    }
+  ]
+}
