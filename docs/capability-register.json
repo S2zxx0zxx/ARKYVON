@@ -1562,8 +1562,11 @@
       "implementation": "Store origin URLs, license text, author, allowed redistribution and review outcome per asset.",
       "wave": "C",
       "acceptance": "Automated compliance/security scan plus versioned human policy/license review and negative tests.",
-      "status": "PROPOSED",
-      "evidence": []
+      "status": "PARTIAL_LOCAL",
+      "evidence": [
+        "tools/asset-cooker.mjs",
+        "tests/asset-cooker.test.mjs"
+      ]
     },
     {
       "id": "CAP-10-003",
@@ -1572,8 +1575,11 @@
       "implementation": "Use specialized importers with MIME/magic checks, size/decompression limits and sandboxed paths.",
       "wave": "C",
       "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
-      "status": "PROPOSED",
-      "evidence": []
+      "status": "PARTIAL_LOCAL",
+      "evidence": [
+        "tools/asset-cooker.mjs",
+        "tests/asset-cooker.test.mjs"
+      ]
     },
     {
       "id": "CAP-10-004",
@@ -1652,8 +1658,11 @@
       "implementation": "Build SHA-256 content-addressed asset cache keyed by full transform toolchain version.",
       "wave": "C",
       "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
-      "status": "PROPOSED",
-      "evidence": []
+      "status": "PARTIAL_LOCAL",
+      "evidence": [
+        "tools/asset-cooker.mjs",
+        "tests/asset-cooker.test.mjs"
+      ]
     },
     {
       "id": "CAP-10-012",
@@ -1692,8 +1701,11 @@
       "implementation": "Deduplicate identical output blobs across games without merging ownership metadata.",
       "wave": "C",
       "acceptance": "Contract test + invalid-input fixture + representative integration/device smoke.",
-      "status": "PROPOSED",
-      "evidence": []
+      "status": "PARTIAL_LOCAL",
+      "evidence": [
+        "tools/asset-cooker.mjs",
+        "tests/asset-cooker.test.mjs"
+      ]
     },
     {
       "id": "CAP-10-016",

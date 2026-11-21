@@ -11,6 +11,7 @@ ARKYVON is an OSS-first, TypeScript-first game-engine ecosystem under active dev
 - Typed event bus, plugin dependency resolution and rollback
 - Scene lifecycle, input queue and strict game-project manifest validation
 - Versioned saves with migration/validation; asset registry with dependency ordering
+- First-stage asset cooker: content SHA-256, source magic/size checks, required SPDX license field, deterministic output index and safe path checks; **no texture compression yet**
 - Vendor-neutral render and physics contracts
 - Testable match-3 game-model example and Canvas-only browser prototype
 - Small game-manifest scaffold generator; offline unit test suite
@@ -21,6 +22,7 @@ ARKYVON is an OSS-first, TypeScript-first game-engine ecosystem under active dev
 npm install --no-audit --no-fund
 npm test
 node tools/create-game.mjs my-new-game 2d
+# Optional: node tools/asset-cooker.mjs <source-root> <out-dir> <asset-manifest.json>
 python3 -m http.server 8080
 ```
 

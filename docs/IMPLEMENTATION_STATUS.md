@@ -9,7 +9,9 @@ Base: new repository with README and AGPL-3.0. This report does not claim end-to
 | CAP-02-004 scene transitions | PARTIAL | `src/core/scenes.ts`; async loading, interruption and advanced rollback pending |
 | CAP-02-012 event commands | PARTIAL | typed bus and command log; serializable public schema pending |
 | CAP-02-013 DI and plugin lifecycle | PARTIAL | plugin topological installation, disposal; service scoping pending |
-| CAP-10 source asset registry | PARTIAL | hash metadata and DAG; actual asset hashing/cooking/transcoding pending |
+| CAP-10 source asset registry | PARTIAL | hash metadata and DAG; full asset processing and platform variants pending |
+| CAP-10-011 content-addressed cache | PARTIAL / local unit-test | `tools/asset-cooker.mjs`: exact SHA-256 asset copy and reproducible index; transform-caching and multiple platform variants pending |
+| CAP-10-003 format validation | PARTIAL / local unit-test | magic/size checks for a small allowlist, traversal + symlink-escape guards; full import-sandbox and decompression controls pending |
 | CAP-13 persistence | PARTIAL | versioned envelope and migration hook; IndexedDB transactional saves pending |
 | Game manifest | IMPLEMENTED / local unit-test | `src/contracts/project-manifest.ts` |
 | Match-3 reference prototype | IMPLEMENTED / local unit-test | `src/game/match-grid.ts`, HTML canvas sample |

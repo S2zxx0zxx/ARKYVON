@@ -3,12 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "npm run build && node --test tests/*.test.mjs",
     "check": "npm run test",
-    "new:game": "node tools/create-game.mjs"
+    "new:game": "node tools/create-game.mjs",
+    "cook:assets": "node tools/asset-cooker.mjs"
   },
-  "devDependencies": { "typescript": "5.8.3" }
+  "devDependencies": {
+    "typescript": "5.8.3"
+  }
 }
